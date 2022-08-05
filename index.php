@@ -26,21 +26,57 @@ include('./config/constants.php');
         <div class="container">
             <div class="text-center">
                 <h2>Magyar Fordítás</h2>
-                <h2>Angol Fordítás</h2>
-            </div>
-            <?php
-                if (isset($_SESSION['keres'])) //checking whether the session is set or not
+                <?php
+                if (isset($_SESSION['keresesHun'])) //checking whether the session is set or not
                 {
-                    echo $_SESSION['keres']; //display the session message if set
-                    unset($_SESSION['keres']); //remove session message
+                    echo $_SESSION['keresesHun']; //display the session message if set
+                    unset($_SESSION['keresesHun']); //remove session message
                 }
                 ?>
+                <h2>Angol Fordítás</h2>
+                <?php
+                if (isset($_SESSION['keresesEn'])) //checking whether the session is set or not
+                {
+                    echo $_SESSION['keresesEn']; //display the session message if set
+                    unset($_SESSION['keresesEn']); //remove session message
+                }
+                ?>
+            </div>
+            <?php
+            if (isset($_SESSION['keresHiba'])) //checking whether the session is set or not
+            {
+                echo $_SESSION['keresHiba']; //display the session message if set
+                unset($_SESSION['keresHiba']); //remove session message
+            }
+
+            if (isset($_SESSION['nincsTalalat'])) //checking whether the session is set or not
+            {
+                echo $_SESSION['nincsTalalat']; //display the session message if set
+                unset($_SESSION['nincsTalalat']); //remove session message
+            }
+            ?>
             <form action="./partials/search.php" method="GET">
                 <div class="input-group my-4 w-75 mx-auto col-12">
-                    <input type="search" class="form-control rounded" placeholder="Keresett szó" name="kereses"/>
-                    <button type="submit" class="btn btn-success" name="kereses">Keresés</button>
+                    <input type="text" class="form-control rounded" placeholder="Keresett szó" name="kereses" required />
+                    <input type="submit" class="btn btn-success" value="Keresés" />
                 </div>
             </form>
+            <?php
+            // PROCESS SEARCH WHEN FORM SUBMITTED
+            if (isset($_GET["kereses"])) {
+                // SEARCH FOR WORDS
+                require "./partials/search.php.php";
+
+                // DISPLAY RESULTS
+                if (count($results) > 0) {
+                    foreach ($results as $r) {
+                        printf("<div>%s - %s</div>", $r["magyar"], $r["angol"]);
+                    }
+                } else {
+                    echo "No results found";
+                }
+            }
+            ?>
             <div class="text-center">
                 <h2>Úticélok</h2>
                 <div class="row">
@@ -70,11 +106,11 @@ include('./config/constants.php');
                 <form class="w-75 mx-auto" method="GET">
                     <div class="mb-3">
                         <label for="angol" class="form-label">Angol szó</label>
-                        <input type="text" class="form-control" id="angolSzo" name="angol">
+                        <input type="text" class="form-control" id="angolSzo" name="angol" required>
                     </div>
                     <div class="mb-3">
                         <label for="magyar" class="form-label">Magyar szó</label>
-                        <input type="text" class="form-control" id="magyarSzo" name="magyar">
+                        <input type="text" class="form-control" id="magyarSzo" name="magyar" required>
                     </div>
                     <div>
                         <button type="submit" class="btn btn-success" name="submit">Hozzáad</button>
@@ -114,7 +150,7 @@ if (isset($_GET['submit'])) {
 
 
     // 3. Executing query and saving data into database
-    $res = mysqli_query($conn, $sql) or die(mysqli_error());
+    $res = mysqli_query($conn, $sql) or die(mysqli_error($conn));
 
     //4. check wether the (query is executed) data is inserted or not and display appropriate message
 
