@@ -21,9 +21,11 @@
                 <h2>Magyar Fordítás</h2>
                 <h2>Angol Fordítás</h2>
             </div>
-            <div class="input-group my-4 w-50">
+            <div class="col-12">
+            <div class="input-group my-4 w-75 mx-auto">
                 <input type="search" class="form-control rounded" placeholder="Keresett szó" aria-label="Search" aria-describedby="search-addon" />
                 <button type="button" class="btn btn-success">Keresés</button>
+            </div>
             </div>
             <div class="text-center">
                 <h2>Úticélok</h2>
@@ -44,7 +46,7 @@
             </div>
             <div class="text-center">
                 <h2>Szópár felvitele</h2>
-                <form class="w-50 mx-auto">
+                <form class="w-75 mx-auto">
                     <div class="mb-3">
                         <label for="angol" class="form-label">Angol szó</label>
                         <input type="text" class="form-control" id="angolSzo">
