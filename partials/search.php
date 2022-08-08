@@ -17,11 +17,11 @@ include('../config/constants.php');
 <body>
 
 	<?php
-	$query = $_GET['kereses'];
+	$query = filter_input(INPUT_GET, 'kereses', FILTER_SANITIZE_SPECIAL_CHARS);
 	// gets value sent over search form
 
 	$min_length = 1;
-	// you can set minimum length of the query if you want
+	// set minimum length of the query
 
 	if (strlen($query) >= $min_length) { // if query length is more or equal minimum length then
 
@@ -42,6 +42,7 @@ include('../config/constants.php');
 
 				$_SESSION['keresesHun'] = "<div class='text-center text-light bg-dark w-50 mx-auto'>" . $results['magyar'] .  "</div>";
 				$_SESSION['keresesEn'] = "<div class='text-center text-light bg-dark w-50 mx-auto'>" . $results['angol'] . "</div>";
+				$_SESSION['keresettSzo'] = "<div class='text-center text-dark bg-light w-50 mx-auto'><p>A keresett szó: " . $query . "</p></div>";
 				// posts results gotten from database(magyar and angol)
 				//redirect page to home page
 				header("location:" . SITEURL . 'index.php');

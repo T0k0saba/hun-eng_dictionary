@@ -25,6 +25,13 @@ include('./config/constants.php');
     <main>
         <div class="container">
             <div class="text-center">
+            <?php
+                if (isset($_SESSION['keresettSzo'])) //checking whether the session is set or not
+                {
+                    echo $_SESSION['keresettSzo']; //display the session message if set
+                    unset($_SESSION['keresettSzo']); //remove session message
+                }
+                ?>
                 <h2>Magyar Fordítás</h2>
                 <?php
                 if (isset($_SESSION['keresesHun'])) //checking whether the session is set or not
@@ -63,9 +70,9 @@ include('./config/constants.php');
             </form>
             <?php
             // PROCESS SEARCH WHEN FORM SUBMITTED
-            if (isset($_GET["kereses"])) {
+            /*if (isset(filter_input(INPUT_GET, 'kereses', FILTER_SANITIZE_SPECIAL_CHARS))) {
                 // SEARCH FOR WORDS
-                require "./partials/search.php.php";
+                require "./partials/search.php.";
 
                 // DISPLAY RESULTS
                 if (count($results) > 0) {
@@ -73,9 +80,9 @@ include('./config/constants.php');
                         printf("<div>%s - %s</div>", $r["magyar"], $r["angol"]);
                     }
                 } else {
-                    echo "No results found";
+                    echo "Nincs találat";
                 }
-            }
+            }*/
             ?>
             <div class="text-center">
                 <h2>Úticélok</h2>
@@ -102,6 +109,20 @@ include('./config/constants.php');
                     echo $_SESSION['add']; //display the session message if set
                     unset($_SESSION['add']); //remove session message
                 }
+                ?>
+                <?php
+                if (isset($_SESSION['notAdd'])) //checking whether the session is set or not
+                {
+                    echo $_SESSION['notAdd']; //display the session message if set
+                    unset($_SESSION['notAdd']); //remove session message
+                }
+                ?>
+                <?php /*
+                if (isset($_SESSION['alreadyExist'])) //checking whether the session is set or not
+                {
+                    echo $_SESSION['alreadyExist']; //display the session message if set
+                    unset($_SESSION['alreadyExist']); //remove session message
+                } */
                 ?>
                 <form class="w-75 mx-auto" method="GET">
                     <div class="mb-3">
@@ -134,20 +155,20 @@ include('./config/constants.php');
 
 //Check whether the submit button is clicked or not
 
-if (isset($_GET['submit'])) {
+if (null !== filter_input(INPUT_GET, 'submit', FILTER_SANITIZE_SPECIAL_CHARS)) { // if(isset($_GET['submit])) replaced
     // Button Clicked
     // echo "Button Clicked";
 
     //1. Get the data from form
-    $magyar = $_GET['magyar'];
-    $angol = $_GET['angol'];
+    $magyar = filter_input(INPUT_GET, 'magyar', FILTER_SANITIZE_SPECIAL_CHARS);
+    $angol = filter_input(INPUT_GET, 'angol', FILTER_SANITIZE_SPECIAL_CHARS);
+
 
     //2. SQL query to save the data into database
     $sql = "INSERT INTO szotar SET
         magyar='$magyar',
         angol='$angol'
     ";
-
 
     // 3. Executing query and saving data into database
     $res = mysqli_query($conn, $sql) or die(mysqli_error($conn));
@@ -165,7 +186,7 @@ if (isset($_GET['submit'])) {
         //Failed to insert data
         //echo "Failed to insert data";
         //create a session variable to display message
-        $_SESSION['add'] = "<div class='text-danger'>A szó hozzáadása sikertelen!</div>";
+        $_SESSION['notAdd'] = "<div class='text-danger'>A szó hozzáadása sikertelen!</div>";
         //redirect page to home page
         header("location:" . SITEURL . 'index.php');
     }
