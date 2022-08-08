@@ -25,7 +25,7 @@ include('./config/constants.php');
     <main>
         <div class="container">
             <div class="text-center">
-            <?php
+                <?php
                 if (isset($_SESSION['keresettSzo'])) //checking whether the session is set or not
                 {
                     echo $_SESSION['keresettSzo']; //display the session message if set
@@ -117,12 +117,12 @@ include('./config/constants.php');
                     unset($_SESSION['notAdd']); //remove session message
                 }
                 ?>
-                <?php /*
+                <?php
                 if (isset($_SESSION['alreadyExist'])) //checking whether the session is set or not
                 {
                     echo $_SESSION['alreadyExist']; //display the session message if set
                     unset($_SESSION['alreadyExist']); //remove session message
-                } */
+                }
                 ?>
                 <form class="w-75 mx-auto" method="GET">
                     <div class="mb-3">
@@ -170,9 +170,20 @@ if (null !== filter_input(INPUT_GET, 'submit', FILTER_SANITIZE_SPECIAL_CHARS)) {
         angol='$angol'
     ";
 
-    // 3. Executing query and saving data into database
-    $res = mysqli_query($conn, $sql) or die(mysqli_error($conn));
+    $check = "SELECT * FROM szotar WHERE magyar = '$magyar'";
+    $rs = mysqli_query($conn, $check);
+    $data = mysqli_fetch_array($rs, MYSQLI_NUM);
+    if ($data[0] > 1) {
+        $_SESSION['alreadyExist'] = "<div class='text-danger text-center'>A szó már létezik!</div>";
+        //redirect page to home page
+        header("location:" . SITEURL . 'index.php');
+    } 
+    else 
+    {
 
+        // 3. Executing query and saving data into database
+        $res = mysqli_query($conn, $sql) or die(mysqli_error($conn));
+    }
     //4. check wether the (query is executed) data is inserted or not and display appropriate message
 
     if ($res == TRUE) {

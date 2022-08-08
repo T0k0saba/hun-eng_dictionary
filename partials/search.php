@@ -4,19 +4,7 @@ include('../config/constants.php');
 
 ?>
 
-<!DOCTYPE html>
-<html lang="hu">
-
-<head>
-	<meta charset="UTF-8">
-	<meta http-equiv="X-UA-Compatible" content="IE=edge">
-	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<title>Keresés</title>
-</head>
-
-<body>
-
-	<?php
+<?php
 	$query = filter_input(INPUT_GET, 'kereses', FILTER_SANITIZE_SPECIAL_CHARS);
 	// gets value sent over search form
 
@@ -59,9 +47,5 @@ include('../config/constants.php');
 		//redirect page to home page
 		header("location:" . SITEURL . 'index.php');
 	}
-	?>
+?>
 
-
-</body>
-
-</html>
