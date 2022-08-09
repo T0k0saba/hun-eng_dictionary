@@ -40,42 +40,37 @@ if (strlen($query) >= $min_length) { // if query length is more or equal minimum
 
 	if (mysqli_num_rows($raw_resultsHu) > 0) { // if one or more rows are returned do following
 
+		$eredmenyekEn = "";
+
 		while ($results = mysqli_fetch_array($raw_resultsHu)) {
 			// $results = mysql_fetch_array($raw_resultsHu) puts data from database into array, while it's valid it does the loop
 
 
-			$_SESSION['keresesEn'] = "<div class='text-center text-light bg-dark w-50 mx-auto'>" . $results['angol'] . "</div>";
-			$_SESSION['keresettSzo'] = "<div class='text-center text-dark bg-light w-50 mx-auto'><p>A keresett szó: " . $query . "</p></div>";
-			// posts results gotten from database(magyar)
-			//redirect page to home page
-			//header("location:" . SITEURL . 'index.php');
+			$eredmenyekEn .= "<div class='text-center text-light bg-dark w-50 mx-auto my-1'>" . $results['angol'] . " </div>";
 		}
-	} 
-	else 
-	{
+		// posts results gotten from database
+		$_SESSION['keresesEn'] = $eredmenyekEn;
+		$_SESSION['keresettSzo'] = "<div class='text-center text-dark bg-light w-50 mx-auto'><p>A keresett szó: " . $query . "</p></div>";
+	} else {
 		//create a session variable to display message
 		$_SESSION['nincsTalalatHu'] = "<div class='text-danger text-center'>Nincs angol megfelelője!</div>";
-		
-	} 
+	}
 	//redirect page to home page
 	header("location:" . SITEURL . 'index.php');
 
 	if (mysqli_num_rows($raw_resultsEn) > 0) { // if one or more rows are returned do following
 
+		$eredmenyekHun = "";
 		while ($results = mysqli_fetch_array($raw_resultsEn)) {
 			// $results = mysql_fetch_array($raw_resultsEn) puts data from database into array, while it's valid it does the loop
-
-			$_SESSION['keresesHun'] = "<div class='text-center text-light bg-dark w-50 mx-auto'>" . $results['magyar'] .  "</div>";
-			$_SESSION['keresettSzo'] = "<div class='text-center text-dark bg-light w-50 mx-auto'><p>A keresett szó: " . $query . "</p></div>";
-			// posts results gotten from database( angol)
-			//redirect page to home page
-			//header("location:" . SITEURL . 'index.php');
+			$eredmenyekHun .= "<div class='text-center text-light bg-dark w-50 mx-auto my-1'>" . $results['magyar'] . "</div>";
 		}
-	} 
-	else 
-	{
+		// posts results gotten from database
+		$_SESSION['keresesHun'] = $eredmenyekHun;
+		$_SESSION['keresettSzo'] = "<div class='text-center text-dark bg-light w-50 mx-auto'><p>A keresett szó: " . $query . "</p></div>";
+	} else {
 		//create a session variable to display message
-		$_SESSION['nincsTalalatEn'] = "<div class='text-danger text-center'>Nincs magyar megfelelője!</div>";	
+		$_SESSION['nincsTalalatEn'] = "<div class='text-danger text-center'>Nincs magyar megfelelője!</div>";
 	}
 	//redirect page to home page
 	header("location:" . SITEURL . 'index.php');
