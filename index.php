@@ -39,6 +39,11 @@ include('./config/constants.php');
                     echo $_SESSION['keresesHun']; //display the session message if set
                     unset($_SESSION['keresesHun']); //remove session message
                 }
+                if (isset($_SESSION['nincsTalalatEn'])) //checking whether the session is set or not
+                {
+                    echo $_SESSION['nincsTalalatEn']; //display the session message if set
+                    unset($_SESSION['nincsTalalatEn']); //remove session message
+                }
                 ?>
                 <h2>Angol Fordítás</h2>
                 <?php
@@ -46,6 +51,11 @@ include('./config/constants.php');
                 {
                     echo $_SESSION['keresesEn']; //display the session message if set
                     unset($_SESSION['keresesEn']); //remove session message
+                }
+                if (isset($_SESSION['nincsTalalatHu'])) //checking whether the session is set or not
+                {
+                    echo $_SESSION['nincsTalalatHu']; //display the session message if set
+                    unset($_SESSION['nincsTalalatHu']); //remove session message
                 }
                 ?>
             </div>
@@ -68,22 +78,7 @@ include('./config/constants.php');
                     <input type="submit" class="btn btn-success" value="Keresés" />
                 </div>
             </form>
-            <?php
-            // PROCESS SEARCH WHEN FORM SUBMITTED
-            /*if (isset(filter_input(INPUT_GET, 'kereses', FILTER_SANITIZE_SPECIAL_CHARS))) {
-                // SEARCH FOR WORDS
-                require "./partials/search.php.";
 
-                // DISPLAY RESULTS
-                if (count($results) > 0) {
-                    foreach ($results as $r) {
-                        printf("<div>%s - %s</div>", $r["magyar"], $r["angol"]);
-                    }
-                } else {
-                    echo "Nincs találat";
-                }
-            }*/
-            ?>
             <div class="text-center">
                 <h2>Úticélok</h2>
                 <div class="row">
@@ -186,7 +181,7 @@ if (null !== filter_input(INPUT_GET, 'submit', FILTER_SANITIZE_SPECIAL_CHARS)) {
         $res = mysqli_query($conn, $sql) or die(mysqli_error($conn));
     }
 
-    
+
     //5. check wether the (query is executed) data is inserted or not and display appropriate message
 
     if ($res == TRUE) {
