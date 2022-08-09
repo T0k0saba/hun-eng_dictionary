@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Gép: 127.0.0.1
--- Létrehozás ideje: 2022. Aug 09. 11:23
+-- Létrehozás ideje: 2022. Aug 09. 12:00
 -- Kiszolgáló verziója: 10.4.21-MariaDB
 -- PHP verzió: 8.0.12
 
@@ -20,7 +20,7 @@ SET time_zone = "+00:00";
 --
 -- Adatbázis: `szotar`
 --
-CREATE DATABASE IF NOT EXISTS `szotar` DEFAULT CHARACTER SET utf8 COLLATE utf8_hungarian_ci;
+CREATE DATABASE IF NOT EXISTS `szotar` DEFAULT CHARACTER SET utf8 COLLATE utf8_bin;
 USE `szotar`;
 
 -- --------------------------------------------------------
@@ -31,8 +31,8 @@ USE `szotar`;
 
 CREATE TABLE `szotar` (
   `sorszam` int(255) UNSIGNED NOT NULL,
-  `magyar` varchar(70) CHARACTER SET utf8 COLLATE utf8_hungarian_ci NOT NULL,
-  `angol` varchar(70) CHARACTER SET utf8 COLLATE utf8_hungarian_ci NOT NULL
+  `magyar` varchar(70) CHARACTER SET utf8 COLLATE utf8_bin NOT NULL,
+  `angol` varchar(70) CHARACTER SET utf8 COLLATE utf8_bin NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 --
