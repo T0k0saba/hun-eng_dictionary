@@ -168,7 +168,7 @@ if (null !== filter_input(INPUT_GET, 'submit', FILTER_SANITIZE_SPECIAL_CHARS)) {
 
     //3. Check whether the word is already exist in database or not
 
-    $check = "SELECT * FROM szotar WHERE magyar = '$magyar' OR angol = '$angol'";
+    $check = "SELECT * FROM szotar WHERE magyar = '$magyar' AND angol = '$angol'";
     $rs = mysqli_query($conn, $check);
     $data = mysqli_fetch_array($rs, MYSQLI_NUM);
     if ($data[0] > 1) {
