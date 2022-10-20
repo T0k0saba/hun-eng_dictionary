@@ -70,7 +70,13 @@ include('./config/constants.php');
                             unset($_SESSION['keresettSzo']); //remove session message
                         }
                         ?>
-                        <h2 class="py-2">Magyarul</h2>
+                        <?php
+                        if (isset($_SESSION['magyarul'])) //checking whether the session is set or not
+                        {
+                            echo $_SESSION['magyarul']; //display the session message if set
+                            unset($_SESSION['magyarul']); //remove session message
+                        }
+                        ?>
                         <?php
                         if (isset($_SESSION['keresesHun'])) //checking whether the session is set or not
                         {
@@ -83,7 +89,13 @@ include('./config/constants.php');
                             unset($_SESSION['nincsTalalatEn']); //remove session message
                         }
                         ?>
-                        <h2 class="py-2">Angolul</h2>
+                        <?php
+                        if (isset($_SESSION['angolul'])) //checking whether the session is set or not
+                        {
+                            echo $_SESSION['angolul']; //display the session message if set
+                            unset($_SESSION['angolul']); //remove session message
+                        }
+                        ?>
                         <?php
                         if (isset($_SESSION['keresesEn'])) //checking whether the session is set or not
                         {

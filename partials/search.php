@@ -40,36 +40,40 @@ if (strlen($query) >= $min_length) { // if query length is more or equal minimum
 
 	if (mysqli_num_rows($raw_resultsHu) > 0) { // if one or more rows are returned do following
 
+		
 		$eredmenyekEn = "";
 
 		while ($results = mysqli_fetch_array($raw_resultsHu)) {
 			// $results = mysql_fetch_array($raw_resultsHu) puts data from database into array, while it's valid it does the loop
 
-
-			$eredmenyekEn .= "<div class='text-center text-light bg-dark w-50 mx-auto my-1'>" . $results['angol'] . " </div>";
+			$eredmenyekEn .= "<div class='w-100 my-1'>" . $results['angol'] . " </div>";
 		}
 		// posts results gotten from database
+		$_SESSION['angolul'] = "<h2 class='py-2'>Angolul:</h2>";
 		$_SESSION['keresesEn'] = $eredmenyekEn;
-		$_SESSION['keresettSzo'] = "<div class='text-center text-dark bg-light w-50 mx-auto'><p>A keresett szó: " . $query . "</p></div>";
+		$_SESSION['keresettSzo'] = "<div class='w-100 mx-auto'><p>A keresett szó: " . $query . "</p></div>";
 	} else {
 		//create a session variable to display message
+		$_SESSION['angolul'] = "<h2 class='py-2'>Angolul:</h2>";
 		$_SESSION['nincsTalalatHu'] = "<div class='text-danger text-center'>Nincs találat!</div>";
 	}
 	//redirect page to home page
 	header("location:" . SITEURL . 'index.php');
 
 	if (mysqli_num_rows($raw_resultsEn) > 0) { // if one or more rows are returned do following
-
+		
 		$eredmenyekHun = "";
 		while ($results = mysqli_fetch_array($raw_resultsEn)) {
 			// $results = mysql_fetch_array($raw_resultsEn) puts data from database into array, while it's valid it does the loop
-			$eredmenyekHun .= "<div class='text-center text-light bg-dark w-50 mx-auto my-1'>" . $results['magyar'] . "</div>";
+			$eredmenyekHun .= "<div class='w-100 my-1'>" . $results['magyar'] . "</div>";
 		}
 		// posts results gotten from database
+		$_SESSION['magyarul'] = "<h2 class='py-2'>Magyarul:</h2>";
 		$_SESSION['keresesHun'] = $eredmenyekHun;
-		$_SESSION['keresettSzo'] = "<div class='text-center text-dark bg-light w-50 mx-auto'><p>A keresett szó: " . $query . "</p></div>";
+		$_SESSION['keresettSzo'] = "<div class='w-100 mx-auto'><p>A keresett szó: " . $query . "</p></div>";
 	} else {
 		//create a session variable to display message
+		$_SESSION['magyarul'] = "<h2 class='py-2'>Magyarul:</h2>";
 		$_SESSION['nincsTalalatEn'] = "<div class='text-danger text-center'>Nincs találat!</div>";
 	}
 	//redirect page to home page
