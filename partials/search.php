@@ -31,7 +31,7 @@ if (strlen($query) >= $min_length) { // if query length is more or equal minimum
 
 	if (mysqli_num_rows($raw_results) == 0) { // if there is no matching rows do following
 		//create a session variable to display message
-		$_SESSION['nincsTalalat'] = "<div class='text-danger text-center'>Nincs találat!</div>";
+		$_SESSION['nincsTalalat'] = "<div class='text-danger text-center'>A keresett szó nincs benne a szótárban!</div>";
 		//redirect page to home page
 		header("location:" . SITEURL . 'index.php');
 		exit;
@@ -53,7 +53,7 @@ if (strlen($query) >= $min_length) { // if query length is more or equal minimum
 		$_SESSION['keresettSzo'] = "<div class='text-center text-dark bg-light w-50 mx-auto'><p>A keresett szó: " . $query . "</p></div>";
 	} else {
 		//create a session variable to display message
-		$_SESSION['nincsTalalatHu'] = "<div class='text-danger text-center'>Nincs angol megfelelője!</div>";
+		$_SESSION['nincsTalalatHu'] = "<div class='text-danger text-center'>Nincs találat!</div>";
 	}
 	//redirect page to home page
 	header("location:" . SITEURL . 'index.php');
@@ -70,16 +70,10 @@ if (strlen($query) >= $min_length) { // if query length is more or equal minimum
 		$_SESSION['keresettSzo'] = "<div class='text-center text-dark bg-light w-50 mx-auto'><p>A keresett szó: " . $query . "</p></div>";
 	} else {
 		//create a session variable to display message
-		$_SESSION['nincsTalalatEn'] = "<div class='text-danger text-center'>Nincs magyar megfelelője!</div>";
+		$_SESSION['nincsTalalatEn'] = "<div class='text-danger text-center'>Nincs találat!</div>";
 	}
 	//redirect page to home page
 	header("location:" . SITEURL . 'index.php');
 }
-/* else { // if query length is less than minimum
-	//create a session variable to display message
-	$_SESSION['keresHiba'] = "<div class='text-danger text-center'>Nem adtál meg semmit!</div>";
-	//redirect page to home page
-	header("location:" . SITEURL . 'index.php');
-}*/
 ?>
 
