@@ -32,6 +32,23 @@ if (strlen($query) >= $min_length) { // if query length is more or equal minimum
 	if (mysqli_num_rows($raw_results) == 0) { // if there is no matching rows do following
 		//create a session variable to display message
 		$_SESSION['nincsTalalat'] = "<div class='text-danger text-center'>A keresett szó nincs benne a szótárban!</div>";
+		$_SESSION['hozzaAdCim'] = "<div class='text-center'> 
+		<h2>Új szó hozzáadása:</h2>";
+	
+		$_SESSION['hozzaAdForm'] = "<form class='w-100 mx-auto' method='GET'>
+			<div class='mb-3'>
+				<label for='angol' class='form-label'>Angol szó</label>
+				<input type='text' class='form-control' id='angolSzo' name='angol' required>
+			</div>
+			<div class='mb-3'>
+				<label for='magyar' class='form-label'>Magyar szó</label>
+				<input type='text' class='form-control' id='magyarSzo' name='magyar' required>
+			</div>
+			<div>
+				<button type='submit' class='btn btn-success' name='submit'>Hozzáad</button>
+			</div>
+		</form>
+	</div>";
 		//redirect page to home page
 		header("location:" . SITEURL . 'index.php');
 		exit;

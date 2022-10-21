@@ -1,19 +1,26 @@
+* { 
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
 body {
-    height: 100vh;
     background: #2b5876;  /* fallback for old browsers */
     background: -webkit-linear-gradient(to right, #4e4376, #2b5876);  /* Chrome 10-25, Safari 5.1-6 */
     background: linear-gradient(to right, #4e4376, #2b5876); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
-
-
-
 }
 
+
 .card {
-    font-family: 'Handlee', cursive;
+    font-family: 'Bree Serif', serif;
 }
 
 #navbar {
     font-family: 'Pacifico', cursive;
+}
+
+main {
+    flex: auto !important;
 }
 
 .card, #navbar {
@@ -22,3 +29,6 @@ body {
     background: linear-gradient(to right, #FFFFFF, #ECE9E6); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */  
 }
 
+#footer {
+    font-family: 'Bree Serif', serif;
+}
