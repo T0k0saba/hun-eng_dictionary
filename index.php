@@ -8,6 +8,7 @@ include('./partials/header.php');
     <div class="container d-flex align-items-center justify-content-center">
         <div class="card border-0 shadow my-5">
             <div class="card-body p-5">
+                <h2 class="text-center">Szó keresése</h2>
                 <?php
                 if (isset($_SESSION['nincsTalalat'])) //checking whether the session is set or not
                 {
