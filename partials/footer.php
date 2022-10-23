@@ -1,5 +1,6 @@
 <footer class="mt-auto">
         <div class="py-4 mt-3" id="footer">
+            <p class="text-white text-center"><a href="./gdpr.php" class="text-decoration-none text-reset">Adatkezelési tájékoztató</a></p>
             <p class="text-white text-center">Minden jog fenntartva &copy; <?php echo $copyYear . (($copyYear != $curYear) ? '-' . $curYear : ''); ?></p>
         </div>
     </footer>
