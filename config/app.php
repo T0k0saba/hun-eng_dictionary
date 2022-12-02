@@ -2,7 +2,7 @@
 
 return [
     'mail' => [
-        'to_email' => 'info@kellegyhely.hu'
+        'to_email' => 'info@enwords.hu'
     ]
 ];
 
