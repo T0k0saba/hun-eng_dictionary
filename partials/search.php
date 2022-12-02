@@ -38,11 +38,11 @@ if (strlen($query) >= $min_length) { // if query length is more or equal minimum
 		$_SESSION['hozzaAdForm'] = "<form class='w-100 mx-auto' method='GET'>
 			<div class='mb-3'>
 				<label for='angol' class='form-label'>Angol szó</label>
-				<input type='text' class='form-control' id='angolSzo' name='angol' required>
+				<input type='text' class='form-control text-lowercase' id='angolSzo' name='angol' required>
 			</div>
 			<div class='mb-3'>
 				<label for='magyar' class='form-label'>Magyar szó</label>
-				<input type='text' class='form-control' id='magyarSzo' name='magyar' required>
+				<input type='text' class='form-control text-lowercase' id='magyarSzo' name='magyar' required>
 			</div>
 			<div>
 				<button type='submit' class='btn btn-success' name='submit'>Hozzáad</button>

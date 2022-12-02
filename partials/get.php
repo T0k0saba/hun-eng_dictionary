@@ -32,7 +32,7 @@
                         <button type="submit" class="btn btn-primary">Küldés</button>
                         <?php if (isset($message)) : ?>
                             <div id="elkuldve">
-                                <p><?= $message ?></p>
+                            <p class="m-0"><?= $message ?></p>
                             </div>
                         <?php endif ?>
                     </form>

@@ -18,7 +18,7 @@ include('./partials/header.php');
                 ?>
                 <form action="./partials/search.php" method="GET">
                     <div class="input-group my-4 w-100 mx-auto col-12">
-                        <input type="text" class="form-control rounded-left" placeholder="Keresett szó" name="kereses" required />
+                        <input type="text" class="form-control rounded-left text-lowercase" placeholder="Keresett szó" name="kereses" required />
                         <input type="submit" class="btn btn-success" value="Keresés" />
                     </div>
                 </form>
