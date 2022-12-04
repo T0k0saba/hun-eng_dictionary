@@ -7,7 +7,7 @@ include('./partials/header.php');
     <div class="row single-form g-0">
       <div class="col-sm-12 col-lg-6">
         <div class="left">
-          <h2><span>Lépjünk kapcsolatba</span><br>Írj nekem</h2>
+          <h2><span>Az üzenet elküldve</span><br>Köszönöm!</h2>
         </div>
       </div>
       <div class="col-sm-12 col-lg-6">
