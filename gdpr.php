@@ -15,18 +15,18 @@ include('./partials/header.php');
                     <li>Székhely: 2517, Kesztölc Kosári utca 14.</li>
                     <li>Adószám: 59465391-1-31</li>
                     <li>Telefonszám: +36 30 847 3312</li>
-                    <li>E-mail: info@kellegyhely.hu</li>
+                    <li>E-mail: info@websiteplanet.hu</li>
                 </ul>
                 <h2>Az Adatkezelő elérhetőségei</h2>
-                <p>Adatvédelmi kérdésekben Adatkezelő az alábbi elérhetőségeken kereshető meg: info@kellegyhely.hu</p>
+                <p>Adatvédelmi kérdésekben Adatkezelő az alábbi elérhetőségeken kereshető meg: info@websiteplanet.hu</p>
                 <p>Az Adatkezelő a hozzá beérkezett adatvédelmi megkereséseket (e-mail), az erre az adatkezelésre vonatkozó, meghatározott ideig őrzi meg. Ennek leteltével ezek visszavonhatatlan módon törlésre kerülnek.</p>
                 <h2>Adatfeldolgozók adatai</h2>
                 <p>Adatfeldolgozó az a természetes vagy jogi személy, közhatalmi szerv, ügynökség vagy bármely egyéb szerv, amely az Adatkezelő nevében személyes adatokat kezel. Az adatfeldolgozó igénybevételéhez nem kell az érintett előzetes beleegyezése, de Adatkezelő az adatok átadásának tényéről tájékoztatni köteles az érintetteket. Ennek megfelelően a következő tájékoztatást adjuk: Adatkezelő a honlapja fenntartásához és kezeléséhez adatfeldolgozókat vesz igénybe, aki az IT szolgáltatásokat (tárhelyszolgáltatás) biztosítja és ennek keretében kezeli a honlapon megadott személyes adatokat. Az IT szolgáltatók által végzett művelet a személyes adatok tárolása a szerveren. Az Adatfeldolgozók saját Adatkezelési szabályzattal rendelkeznek, amelyben garantálják a törvényi megfelelést.</p>
                 <h2>Adatkezelő IT szolgáltatói</h2>
                 <ul>
-                    <li>Név: Nethely Kft.</li>
-                    <li>Telefonszám: +36 1 445 2040</li>
-                    <li>Email cím: info@nethely.hu</li>
+                    <li>Név: NCSB IT Hosting & Consulting BT.</li>
+                    <li>Telefonszám: +36 94 200 215</li>
+                    <li>Email cím: info@awh.hu</li>
                 </ul>
                 <h2>Adatkezelő Adatkezelései és a kezelt személyes adatok</h2>
                 <h3>Online ügyintézéshez kapcsolódó adatok</h3>
@@ -83,7 +83,7 @@ include('./partials/header.php');
                     <li>E-mail: ugyfelszolgalat@naih.hu</li>
                     <li>Honlap: http://www.naih.hu</li>
                 </ul>
-                <p>Frissítve: 2022.09.15.</p>
+                <p>Frissítve: 2023.03.19.</p>
             </div>
         </div>
     </div>
