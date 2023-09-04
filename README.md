@@ -20,5 +20,5 @@ This is my exam assignment of a PHP course what i'm doing now.
 
 ## Author
 
-- Facebook - [@tokosaba](https://www.facebook.com/tokosaba)
-- Website -  [Toókos Aba](https://www.kellegyhely.hu)
+- Facebook - [@tokosaba](https://www.facebook.com/websiteplanethu)
+- Website -  [Toókos Aba](https://www.websiteplanet.hu)
