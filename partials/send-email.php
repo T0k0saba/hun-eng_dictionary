@@ -18,15 +18,15 @@ $mail->Encoding = 'base64';
 $mail->isSMTP();
 $mail->SMTPAuth = true;
 
-$mail->Host = "k01.awh.hu";
+$mail->Host = "your host"; //REPLACE IT
 $mail->SMTPSecure = PHPMailer::ENCRYPTION_STARTTLS;
 $mail->Port = 587;
 
-$mail->Username = "info@enwords.hu";
-$mail->Password = "pS6&deq#py#C";
+$mail->Username = "example@example.com"; //REPLACE IT
+$mail->Password = "yourpassword"; //REPLACE IT
 
 $mail->setFrom($email, $name);
-$mail->addAddress("info@enwords.hu");
+$mail->addAddress("info@example.com"); //REPLACE IT
 
 $mail->Subject = $subject;
 $mail->Body = $message;

@@ -1,7 +1,8 @@
 # hun-eng_dictionary
 
 
-This is my exam assignment of a PHP course what i'm doing now.
+This is an English-Hungarian dictionary webapp that is designed in such a way that if a word is not in the dictionary, any user can freely add it.
+I just made it for fun. :)
 
 ## My process
 
@@ -20,5 +21,5 @@ This is my exam assignment of a PHP course what i'm doing now.
 
 ## Author
 
-- Facebook - [@tokosaba](https://www.facebook.com/websiteplanethu)
-- Website -  [Toókos Aba](https://www.websiteplanet.hu)
+- Facebook - https://www.facebook.com/websiteplanethu
+- Website -  https://www.websiteplanet.hu
