@@ -4,6 +4,8 @@
 This is an English-Hungarian dictionary webapp that is designed in such a way that if a word is not in the dictionary, any user can freely add it.
 I just made it for fun. :)
 
+If you want to use it, don't forget to import the database into your own!
+
 ## My process
 
 ### Built with
