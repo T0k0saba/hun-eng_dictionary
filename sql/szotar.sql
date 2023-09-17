@@ -1,11 +1,11 @@
 -- phpMyAdmin SQL Dump
--- version 5.1.1
+-- version 5.2.1
 -- https://www.phpmyadmin.net/
 --
--- Gép: 127.0.0.1
--- Létrehozás ideje: 2022. Aug 09. 15:36
--- Kiszolgáló verziója: 10.4.21-MariaDB
--- PHP verzió: 8.0.12
+-- Gép: localhost
+-- Létrehozás ideje: 2023. Sze 17. 13:39
+-- Kiszolgáló verziója: 10.5.19-MariaDB-0+deb11u2
+-- PHP verzió: 7.4.33
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
@@ -18,10 +18,8 @@ SET time_zone = "+00:00";
 /*!40101 SET NAMES utf8mb4 */;
 
 --
--- Adatbázis: `szotar`
+-- Adatbázis: `lcwlefgr_db1`
 --
-CREATE DATABASE IF NOT EXISTS `szotar` DEFAULT CHARACTER SET utf8 COLLATE utf8_bin;
-USE `szotar`;
 
 -- --------------------------------------------------------
 
@@ -33,14 +31,13 @@ CREATE TABLE `szotar` (
   `sorszam` int(10) UNSIGNED NOT NULL,
   `magyar` varchar(70) CHARACTER SET utf8 COLLATE utf8_bin NOT NULL,
   `angol` varchar(70) CHARACTER SET utf8 COLLATE utf8_bin NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_general_ci;
 
 --
 -- A tábla adatainak kiíratása `szotar`
 --
 
 INSERT INTO `szotar` (`sorszam`, `magyar`, `angol`) VALUES
-(1, 'magyar', 'angol'),
 (2, 'a', 'the'),
 (3, 'abajgat', 'pamper'),
 (4, 'abál', 'parboil'),
@@ -3886,7 +3883,7 @@ INSERT INTO `szotar` (`sorszam`, `magyar`, `angol`) VALUES
 (3844, 'kakadu', 'cockatoo'),
 (3845, 'kakaó', 'cocoa'),
 (3846, 'kakas', 'cock'),
-(3847, 'kaki', 'inf poo'),
+(3847, 'kaki', 'poo'),
 (3848, 'kaktusz', 'cactus'),
 (3849, 'kakukk', 'cuckoo'),
 (3850, 'kalács', 'sweet bread'),
@@ -9535,7 +9532,16 @@ INSERT INTO `szotar` (`sorszam`, `magyar`, `angol`) VALUES
 (9493, 'zsugorodik', 'shrink'),
 (9494, 'összezsugorodik', 'shrink'),
 (9495, 'zsúr', 'party'),
-(9496, 'zsüri', 'jury');
+(9496, 'zsüri', 'jury'),
+(9498, 'bemutatkozás', 'introduction'),
+(9499, 'alma', 'apple'),
+(9500, 'asztal', 'desk'),
+(9501, 'karkötő', 'bracelet'),
+(9502, 'Alma', 'Apple'),
+(9503, 'engedély', 'permission'),
+(9504, 'hűség', 'loyalti'),
+(9505, 'valami', 'something'),
+(9506, 'autó', 'car');
 
 --
 -- Indexek a kiírt táblákhoz
@@ -9557,7 +9563,7 @@ ALTER TABLE `szotar`
 -- AUTO_INCREMENT a táblához `szotar`
 --
 ALTER TABLE `szotar`
-  MODIFY `sorszam` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9497;
+  MODIFY `sorszam` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9507;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
